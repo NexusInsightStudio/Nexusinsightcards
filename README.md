@@ -9,27 +9,28 @@
 ![Data_Architecture](https://img.shields.io/badge/Architecture-Enterprise_Grade-blue)
 
 ## Overview
-**Nexusinsightcards** is an enterprise-grade custom visual for Microsoft Power BI. It transforms standard reporting into an actionable executive dashboard. By dynamically generating a grid of KPI cards based on input measures, it delivers high-density insights, trend analysis, and instant managerial alerts in a single, highly optimized, and visually stunning component.
+**Nexusinsightcards** is an enterprise-grade custom visual for Microsoft Power BI. It transforms standard reporting into an actionable executive dashboard. By dynamically generating a CSS Grid of KPI cards based on input measures, it delivers high-density insights, trend analysis, and instant managerial alerts in a single, highly optimized, and visually stunning component.
 
 ## Visual Preview
 *Executive view of growth, profitability, discount pressure, and customer sentiment.*
 
 ![Nexus BI Dashboard Preview](image_853a03.jpg)
 
-## Key Features
-- **Smart Alert Footers:** Automated, threshold-based intelligent text alerts (e.g., *Action Required*, *Strong Growth*) that provide managers with split-second contextual insights.
-- **Advanced Variance & YoY Analysis:** Built-in capabilities to compare current performance against previous years, automatically calculating and displaying growth or loss rates.
-- **Integrated Sparklines:** Embedded micro-charts for immediate trend visualization without cluttering the canvas.
-- **Dynamic Formatting & Units:** Fully dynamic unit displays (e.g., USD, Orders, %) and custom measure-driven formatting to ensure pristine data presentation.
-- **Custom Iconography:** Ability to assign and render specific, high-quality icons for individual KPI categories.
-- **Polished UI/UX:** Modern card design featuring dynamic shadow effects and responsive layouts that elevate the overall dashboard aesthetic.
+## Key Technical Features
+- **Dynamic Formatting & Units:** Full support for DAX format strings (`formatStringMeasure`) and dynamic unit labels (`unitMeasure`). Each card can independently display $, %, or quantity based on the data.
+- **5 Built-in Sparkline Types:** Embed immediate trend visualization using Line, Area, Bar, Progress Bar, or Gauge charts without cluttering the canvas.
+- **Smart Alert Footers:** Automated, threshold-based intelligent text alerts (`insightText`) provide managers with split-second contextual insights.
+- **Rich Iconography library:** 13 built-in categorical icons (Finance, Logistics, Security, etc.) with customizable shadow effects for a polished UI.
+- **Advanced Grid Layout:** Fully customizable CSS Grid architecture (columns, gap, padding) ensuring responsive layouts.
+- **AppSource Ready:** Full compliance with Microsoft's accessibility standards, including High Contrast mode support and keyboard navigation.
 
 ## Data Roles Configuration
-To fully utilize the smart features of this visual, map your Power BI fields as follows:
-- **KPI Category:** The dimension used to generate and split the individual cards.
-- **Main Measure:** The primary numeric value to be displayed and formatted dynamically.
-- **Comparison / Target Measure:** Used for YoY calculations and variance percentages.
-- **Trend Axis (Date):** Required for rendering the embedded sparklines.
+Map your Power BI fields as follows to unlock the visual's full potential:
+- **KPI Category:** The grouping dimension used to generate individual cards.
+- **Data Field (Primary Measure):** The primary numeric value to be displayed.
+- **Target Value:** The comparison metric used for variance and YoY calculations.
+- **Trend Axis:** The categorical/date axis required for rendering sparklines.
+- **Reference Tooltip & Formatting:** Optional roles for dynamic text (`insightText`), custom DAX formats, and dynamic border colors.
 
 ## Installation
 1. Download the latest `.pbiviz` file from the [Releases](../../releases) section.
@@ -37,6 +38,6 @@ To fully utilize the smart features of this visual, map your Power BI fields as 
 3. In the **Visualizations** pane, click the three dots (`...`) and select **Import a visual from a file**.
 4. Import the Nexusinsightcards visual and start building your executive views.
 
-## Author & Support
+## Author & Enterprise Licensing
 - **Brand:** Nexusinsightcards
-- For enterprise implementation, custom feature requests, or support, please reach out via our official channels.
+- **Licensing:** The visual includes advanced `[PRO]` features. For enterprise activation keys, custom feature requests, or support, please reach out via our official channels.
