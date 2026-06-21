@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexusinsightcards | Advanced Power BI KPI Visual</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        nexusDark: '#1a1a24',
+                        nexusGray: '#2d2d3b',
+                        nexusYellow: '#FFB900',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-nexusDark text-white font-sans antialiased selection:bg-nexusYellow selection:text-nexusDark">
+
+    <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <div class="flex items-center space-x-3">
+            <img src="5164c31f-aa0e-4b7f-a5d1-6803acc0dd2b.png" alt="Nexus Logo" class="h-10 w-10 rounded-md">
+            <span class="text-xl font-bold tracking-tight">Nexus<span class="text-nexusYellow">insightcards</span></span>
+        </div>
+        <div class="hidden md:flex space-x-8 text-sm font-semibold text-gray-300">
+            <a href="#features" class="hover:text-nexusYellow transition">Features</a>
+            <a href="#preview" class="hover:text-nexusYellow transition">Dashboard Demo</a>
+            <a href="#pricing" class="hover:text-nexusYellow transition">Enterprise License</a>
+        </div>
+        <a href="https://github.com/Nexusinsightcards/Nexusinsightcards/releases" class="bg-nexusYellow text-nexusDark px-5 py-2 rounded-md font-bold hover:bg-yellow-400 transition shadow-lg shadow-yellow-500/30">
+            Download .pbiviz
+        </a>
+    </nav>
+
+    <section class="container mx-auto px-6 py-20 text-center md:py-32">
+        <div class="inline-block mb-4 px-3 py-1 rounded-full bg-nexusGray text-xs font-semibold text-nexusYellow border border-gray-700">
+            v1.0.0 is now live on GitHub
+        </div>
+        <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 leading-tight">
+            Transform Your Data into <br/>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-nexusYellow to-yellow-600">Actionable Insights.</span>
+        </h1>
+        <p class="text-lg md:text-xl text-gray-400 mb-10 max-w-3xl mx-auto">
+            An enterprise-grade custom visual for Microsoft Power BI. Build high-density KPI grids with dynamic sparklines, smart threshold alerts, and DAX-driven formatting in seconds.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
+            <a href="https://github.com/Nexusinsightcards/Nexusinsightcards" class="bg-nexusYellow text-nexusDark px-8 py-4 rounded-md font-bold text-lg hover:bg-yellow-400 transition w-full sm:w-auto shadow-lg shadow-yellow-500/20">
+                View on GitHub
+            </a>
+            <a href="#pricing" class="bg-nexusGray text-white border border-gray-600 px-8 py-4 rounded-md font-bold text-lg hover:bg-gray-700 transition w-full sm:w-auto">
+                Get [PRO] License
+            </a>
+        </div>
+    </section>
+
+    <section id="preview" class="container mx-auto px-6 py-10">
+        <div class="relative rounded-2xl p-2 bg-gradient-to-b from-gray-700 to-nexusDark shadow-2xl">
+            <img src="image_853a03.jpg" alt="Nexus BI Dashboard Preview" class="rounded-xl w-full border border-gray-800">
+            <div class="absolute inset-0 bg-gradient-to-t from-nexusDark via-transparent to-transparent opacity-80 rounded-2xl pointer-events-none"></div>
+        </div>
+    </section>
+
+    <section id="features" class="container mx-auto px-6 py-24">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">Engineered for Data Professionals</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div class="bg-nexusGray p-8 rounded-xl border border-gray-700 hover:border-nexusYellow transition duration-300">
+                <div class="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center mb-6 text-nexusYellow">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                </div>
+                <h3 class="text-xl font-bold mb-3">Smart Alert Footers</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Automated, threshold-based intelligent text alerts (e.g., Action Required, Strong Growth) that provide managers with split-second contextual insights.</p>
+            </div>
+            
+            <div class="bg-nexusGray p-8 rounded-xl border border-gray-700 hover:border-nexusYellow transition duration-300">
+                <div class="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center mb-6 text-nexusYellow">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"></path></svg>
+                </div>
+                <h3 class="text-xl font-bold mb-3">5 Sparkline Types</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Embed immediate trend visualization using Line, Area, Bar, Progress Bar, or Gauge charts without cluttering your Power BI canvas.</p>
+            </div>
+
+            <div class="bg-nexusGray p-8 rounded-xl border border-gray-700 hover:border-nexusYellow transition duration-300">
+                <div class="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center mb-6 text-nexusYellow">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                </div>
+                <h3 class="text-xl font-bold mb-3">Dynamic DAX Formatting</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Full support for format strings (formatStringMeasure) and dynamic unit labels. Each card independently displays $, %, or quantity based on data.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="container mx-auto px-6 py-24 border-t border-gray-800">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Transparent Enterprise Licensing</h2>
+            <p class="text-gray-400">Start building for free, upgrade to unlock advanced insights and unlimited categories.</p>
+        </div>
+
+        <div class="flex flex-col md:flex-row justify-center gap-8 max-w-4xl mx-auto">
+            <div class="flex-1 bg-nexusDark border border-gray-700 p-8 rounded-2xl">
+                <h3 class="text-2xl font-bold mb-2">Community</h3>
+                <p class="text-nexusYellow font-bold text-3xl mb-6">Free</p>
+                <ul class="space-y-4 mb-8 text-gray-300 text-sm">
+                    <li class="flex items-center"><svg class="w-5 h-5 mr-3 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Up to 3 KPI Categories</li>
+                    <li class="flex items-center"><svg class="w-5 h-5 mr-3 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Basic Sparklines</li>
+                    <li class="flex items-center"><svg class="w-5 h-5 mr-3 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Custom Icons & Colors</li>
+                    <li class="flex items-center text-gray-600"><svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg> Advanced Status Colors</li>
+                    <li class="flex items-center text-gray-600"><svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg> Smart Insight Text Alerts</li>
+                </ul>
+                <a href="https://github.com/Nexusinsightcards/Nexusinsightcards" class="block text-center w-full bg-transparent border border-gray-600 hover:bg-gray-800 text-white font-bold py-3 rounded-md transition">Download Free</a>
+            </div>
+
+            <div class="flex-1 bg-nexusGray border-2 border-nexusYellow p-8 rounded-2xl relative transform md:-translate-y-4 shadow-2xl shadow-yellow-900/20">
+                <div class="absolute top-0 right-0 bg-nexusYellow text-nexusDark text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-xl uppercase tracking-wider">Most Popular</div>
+                <h3 class="text-2xl font-bold mb-2">Enterprise [PRO]</h3>
+                <p class="text-white font-bold text-3xl mb-6">Contact Us</p>
+                <ul class="space-y-4 mb-8 text-gray-200 text-sm">
+                    <li class="flex items-center"><svg class="w-5 h-5 mr-3 text-nexusYellow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Unlimited KPI Categories</li>
+                    <li class="flex items-center"><svg class="w-5 h-5 mr-3 text-nexusYellow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Dynamic JSON Configuration</li>
+                    <li class="flex items-center"><svg class="w-5 h-5 mr-3 text-nexusYellow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Smart Insight Text Alerts</li>
+                    <li class="flex items-center"><svg class="w-5 h-5 mr-3 text-nexusYellow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Custom Variance Status Colors</li>
+                    <li class="flex items-center"><svg class="w-5 h-5 mr-3 text-nexusYellow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Premium Email Support</li>
+                </ul>
+                <a href="mailto:support@yourdomain.com" class="block text-center w-full bg-nexusYellow hover:bg-yellow-400 text-nexusDark font-bold py-3 rounded-md transition">Request License Key</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="border-t border-gray-800 bg-nexusDark pt-10 pb-6 text-center">
+        <div class="text-gray-500 text-sm">
+            <p>&copy; 2026 Nexus BI. All rights reserved.</p>
+            <p class="mt-2">Architected to handle large-scale datasets with seamless interactive rendering.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
