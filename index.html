@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nexusinsightcards | Advanced Power BI KPI Visual</title>
+    <title>NexusInsightCards | Enterprise Power BI Visual</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="icon" type="image/png" href="5164c31f-aa0e-4b7f-a5d1-6803acc0dd2b.png">
     <script>
         tailwind.config = {
             theme: {
@@ -24,24 +24,26 @@
 </head>
 <body class="bg-nexusDark text-white font-sans antialiased selection:bg-nexusYellow selection:text-nexusDark">
 
-    <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+    <!-- Navbar -->
+    <nav class="container mx-auto px-6 py-4 flex justify-between items-center border-b border-gray-800">
         <div class="flex items-center space-x-3">
-            <img src="5164c31f-aa0e-4b7f-a5d1-6803acc0dd2b.png" alt="Nexus Logo" class="h-10 w-10 rounded-md">
-            <span class="text-xl font-bold tracking-tight">Nexus<span class="text-nexusYellow">insightcards</span></span>
+            <img src="5164c31f-aa0e-4b7f-a5d1-6803acc0dd2b.png" alt="Nexus Insight Studio Logo" class="h-10 w-10 rounded-md shadow-md">
+            <span class="text-xl font-bold tracking-tight">Nexus<span class="text-nexusYellow">InsightCards</span></span>
         </div>
         <div class="hidden md:flex space-x-8 text-sm font-semibold text-gray-300">
             <a href="#features" class="hover:text-nexusYellow transition">Features</a>
             <a href="#preview" class="hover:text-nexusYellow transition">Dashboard Demo</a>
             <a href="#pricing" class="hover:text-nexusYellow transition">Enterprise License</a>
         </div>
-        <a href="https://github.com/Nexusinsightcards/Nexusinsightcards/releases" class="bg-nexusYellow text-nexusDark px-5 py-2 rounded-md font-bold hover:bg-yellow-400 transition shadow-lg shadow-yellow-500/30">
+        <a href="https://github.com/NexusInsightStudio/NexusInsightCards/releases" target="_blank" class="bg-nexusYellow text-nexusDark px-5 py-2 rounded-md font-bold hover:bg-yellow-400 transition shadow-lg shadow-yellow-500/30">
             Download .pbiviz
         </a>
     </nav>
 
+    <!-- Hero Section -->
     <section class="container mx-auto px-6 py-20 text-center md:py-32">
-        <div class="inline-block mb-4 px-3 py-1 rounded-full bg-nexusGray text-xs font-semibold text-nexusYellow border border-gray-700">
-            v1.0.0 is now live on GitHub
+        <div class="inline-block mb-4 px-3 py-1 rounded-full bg-nexusGray text-xs font-semibold text-nexusYellow border border-gray-700 shadow-sm">
+            🚀 v1.0.0 is now live on GitHub
         </div>
         <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 leading-tight">
             Transform Your Data into <br/>
@@ -51,7 +53,8 @@
             An enterprise-grade custom visual for Microsoft Power BI. Build high-density KPI grids with dynamic sparklines, smart threshold alerts, and DAX-driven formatting in seconds.
         </p>
         <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
-            <a href="https://github.com/Nexusinsightcards/Nexusinsightcards" class="bg-nexusYellow text-nexusDark px-8 py-4 rounded-md font-bold text-lg hover:bg-yellow-400 transition w-full sm:w-auto shadow-lg shadow-yellow-500/20">
+            <a href="https://github.com/NexusInsightStudio/NexusInsightCards" target="_blank" class="bg-nexusYellow text-nexusDark px-8 py-4 rounded-md font-bold text-lg hover:bg-yellow-400 transition w-full sm:w-auto shadow-lg shadow-yellow-500/20 flex items-center justify-center">
+                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"></path></svg>
                 View on GitHub
             </a>
             <a href="#pricing" class="bg-nexusGray text-white border border-gray-600 px-8 py-4 rounded-md font-bold text-lg hover:bg-gray-700 transition w-full sm:w-auto">
@@ -60,6 +63,7 @@
         </div>
     </section>
 
+    <!-- Dashboard Preview -->
     <section id="preview" class="container mx-auto px-6 py-10">
         <div class="relative rounded-2xl p-2 bg-gradient-to-b from-gray-700 to-nexusDark shadow-2xl">
             <img src="image_853a03.jpg" alt="Nexus BI Dashboard Preview" class="rounded-xl w-full border border-gray-800">
@@ -67,11 +71,12 @@
         </div>
     </section>
 
+    <!-- Features -->
     <section id="features" class="container mx-auto px-6 py-24">
         <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">Engineered for Data Professionals</h2>
         
         <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-            <div class="bg-nexusGray p-8 rounded-xl border border-gray-700 hover:border-nexusYellow transition duration-300">
+            <div class="bg-nexusGray p-8 rounded-xl border border-gray-700 hover:border-nexusYellow transition duration-300 shadow-lg">
                 <div class="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center mb-6 text-nexusYellow">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
                 </div>
@@ -79,7 +84,7 @@
                 <p class="text-gray-400 text-sm leading-relaxed">Automated, threshold-based intelligent text alerts (e.g., Action Required, Strong Growth) that provide managers with split-second contextual insights.</p>
             </div>
             
-            <div class="bg-nexusGray p-8 rounded-xl border border-gray-700 hover:border-nexusYellow transition duration-300">
+            <div class="bg-nexusGray p-8 rounded-xl border border-gray-700 hover:border-nexusYellow transition duration-300 shadow-lg">
                 <div class="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center mb-6 text-nexusYellow">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"></path></svg>
                 </div>
@@ -87,16 +92,25 @@
                 <p class="text-gray-400 text-sm leading-relaxed">Embed immediate trend visualization using Line, Area, Bar, Progress Bar, or Gauge charts without cluttering your Power BI canvas.</p>
             </div>
 
-            <div class="bg-nexusGray p-8 rounded-xl border border-gray-700 hover:border-nexusYellow transition duration-300">
+            <div class="bg-nexusGray p-8 rounded-xl border border-gray-700 hover:border-nexusYellow transition duration-300 shadow-lg">
                 <div class="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center mb-6 text-nexusYellow">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                 </div>
                 <h3 class="text-xl font-bold mb-3">Dynamic DAX Formatting</h3>
-                <p class="text-gray-400 text-sm leading-relaxed">Full support for format strings (formatStringMeasure) and dynamic unit labels. Each card independently displays $, %, or quantity based on data.</p>
+                <p class="text-gray-400 text-sm leading-relaxed">Full support for format strings and dynamic unit labels. Each card independently displays $, %, or quantity based on data.</p>
+            </div>
+            
+            <div class="bg-nexusGray p-8 rounded-xl border border-gray-700 hover:border-nexusYellow transition duration-300 shadow-lg md:col-start-2">
+                <div class="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center mb-6 text-nexusYellow">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                </div>
+                <h3 class="text-xl font-bold mb-3">Glanceable Variance</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Instant visual feedback with dynamic color-coded indicators (▲/▼) comparing performance strictly against your targets.</p>
             </div>
         </div>
     </section>
 
+    <!-- Pricing / Licensing -->
     <section id="pricing" class="container mx-auto px-6 py-24 border-t border-gray-800">
         <div class="text-center max-w-2xl mx-auto mb-16">
             <h2 class="text-3xl md:text-4xl font-bold mb-4">Transparent Enterprise Licensing</h2>
@@ -104,38 +118,52 @@
         </div>
 
         <div class="flex flex-col md:flex-row justify-center gap-8 max-w-4xl mx-auto">
-            <div class="flex-1 bg-nexusDark border border-gray-700 p-8 rounded-2xl">
+            
+            <!-- Free Tier -->
+            <div class="flex-1 bg-nexusDark border border-gray-700 p-8 rounded-2xl flex flex-col">
                 <h3 class="text-2xl font-bold mb-2">Community</h3>
                 <p class="text-nexusYellow font-bold text-3xl mb-6">Free</p>
-                <ul class="space-y-4 mb-8 text-gray-300 text-sm">
+                <ul class="space-y-4 mb-8 text-gray-300 text-sm flex-grow">
                     <li class="flex items-center"><svg class="w-5 h-5 mr-3 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Up to 3 KPI Categories</li>
                     <li class="flex items-center"><svg class="w-5 h-5 mr-3 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Basic Sparklines</li>
                     <li class="flex items-center"><svg class="w-5 h-5 mr-3 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Custom Icons & Colors</li>
                     <li class="flex items-center text-gray-600"><svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg> Advanced Status Colors</li>
                     <li class="flex items-center text-gray-600"><svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg> Smart Insight Text Alerts</li>
                 </ul>
-                <a href="https://github.com/Nexusinsightcards/Nexusinsightcards" class="block text-center w-full bg-transparent border border-gray-600 hover:bg-gray-800 text-white font-bold py-3 rounded-md transition">Download Free</a>
+                <a href="https://github.com/NexusInsightStudio/NexusInsightCards/releases" target="_blank" class="block text-center w-full bg-transparent border border-gray-600 hover:bg-gray-800 text-white font-bold py-3 rounded-md transition mt-auto">Download Free</a>
             </div>
 
-            <div class="flex-1 bg-nexusGray border-2 border-nexusYellow p-8 rounded-2xl relative transform md:-translate-y-4 shadow-2xl shadow-yellow-900/20">
-                <div class="absolute top-0 right-0 bg-nexusYellow text-nexusDark text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-xl uppercase tracking-wider">Most Popular</div>
-                <h3 class="text-2xl font-bold mb-2">Enterprise [PRO]</h3>
+            <!-- Pro Tier -->
+            <div class="flex-1 bg-nexusGray border-2 border-nexusYellow p-8 rounded-2xl relative transform md:-translate-y-4 shadow-2xl shadow-yellow-900/20 flex flex-col">
+                <div class="absolute top-0 right-0 bg-nexusYellow text-nexusDark text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-xl uppercase tracking-wider">Enterprise</div>
+                <h3 class="text-2xl font-bold mb-2">Nexus [PRO]</h3>
                 <p class="text-white font-bold text-3xl mb-6">Contact Us</p>
-                <ul class="space-y-4 mb-8 text-gray-200 text-sm">
+                <ul class="space-y-4 mb-8 text-gray-200 text-sm flex-grow">
                     <li class="flex items-center"><svg class="w-5 h-5 mr-3 text-nexusYellow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Unlimited KPI Categories</li>
                     <li class="flex items-center"><svg class="w-5 h-5 mr-3 text-nexusYellow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Dynamic JSON Configuration</li>
                     <li class="flex items-center"><svg class="w-5 h-5 mr-3 text-nexusYellow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Smart Insight Text Alerts</li>
                     <li class="flex items-center"><svg class="w-5 h-5 mr-3 text-nexusYellow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Custom Variance Status Colors</li>
-                    <li class="flex items-center"><svg class="w-5 h-5 mr-3 text-nexusYellow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Premium Email Support</li>
+                    <li class="flex items-center"><svg class="w-5 h-5 mr-3 text-nexusYellow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Premium Engineering Support</li>
                 </ul>
-                <a href="mailto:support@yourdomain.com" class="block text-center w-full bg-nexusYellow hover:bg-yellow-400 text-nexusDark font-bold py-3 rounded-md transition">Request License Key</a>
+                <a href="mailto:info@nexusinsightcards.com" class="block text-center w-full bg-nexusYellow hover:bg-yellow-400 text-nexusDark font-bold py-3 rounded-md transition mt-auto">Request License Key</a>
             </div>
         </div>
+
+        <!-- 30-Day Demo Key Banner -->
+        <div class="mt-12 bg-gradient-to-r from-nexusGray to-gray-800 border border-gray-700 p-6 rounded-xl text-center max-w-3xl mx-auto shadow-lg">
+            <h4 class="text-nexusYellow font-bold text-lg mb-2">🎁 Try PRO for Free (30-Day Demo)</h4>
+            <p class="text-sm text-gray-300 mb-4">Experience the full power of NexusInsightCards. Copy and paste this key into the visual's Format Pane (License & Activation):</p>
+            <div class="bg-nexusDark px-4 py-3 rounded-md border border-gray-600 flex items-center justify-center overflow-x-auto">
+                <code class="text-green-400 font-mono text-sm whitespace-nowrap">NEXUS-eyJjbGllbnQiOiJHaXRIdWJEZW1vIiwiZXhwIjoiMjAyNi0wOC0zMCJ9-114F23C</code>
+            </div>
+        </div>
+
     </section>
 
+    <!-- Footer -->
     <footer class="border-t border-gray-800 bg-nexusDark pt-10 pb-6 text-center">
         <div class="text-gray-500 text-sm">
-            <p>&copy; 2026 Nexus BI. All rights reserved.</p>
+            <p>&copy; 2026 Nexus Insight Studio. All rights reserved.</p>
             <p class="mt-2">Architected to handle large-scale datasets with seamless interactive rendering.</p>
         </div>
     </footer>
