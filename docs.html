@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation | NexusInsightCards</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="5164c31f-aa0e-4b7f-a5d1-6803acc0dd2b.png">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        nexusDark: '#1a1a24',
+                        nexusGray: '#2d2d3b',
+                        nexusYellow: '#FFB900',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #1a1a24; }
+        ::-webkit-scrollbar-thumb { background: #2d2d3b; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #FFB900; }
+        .code-container { max-height: 400px; overflow-y: auto; }
+    </style>
+</head>
+<body class="bg-nexusDark text-gray-300 font-sans antialiased selection:bg-nexusYellow selection:text-nexusDark flex flex-col min-h-screen">
+
+    <nav class="sticky top-0 z-50 bg-nexusDark/90 backdrop-blur-md border-b border-gray-800 px-6 py-4 flex justify-between items-center">
+        <a href="index.html" class="flex items-center space-x-3 group cursor-pointer transition">
+            <img src="5164c31f-aa0e-4b7f-a5d1-6803acc0dd2b.png" alt="Logo" class="h-8 w-8 rounded shadow-[0_0_10px_rgba(255,185,0,0.3)]">
+            <span class="text-lg font-bold text-white group-hover:text-nexusYellow transition">Nexus<span class="text-nexusYellow group-hover:text-white">Docs</span></span>
+        </a>
+        <div class="flex space-x-4">
+            <a href="index.html" class="text-sm font-semibold hover:text-white transition">← Back to Home</a>
+        </div>
+    </nav>
+
+    <div class="flex flex-1 container mx-auto px-4 md:px-6 py-8">
+        
+        <aside class="hidden md:block w-64 shrink-0 pr-8">
+            <div class="sticky top-24">
+                <h4 class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-4">Getting Started</h4>
+                <ul class="space-y-3 mb-8 text-sm">
+                    <li><a href="#installation" class="hover:text-nexusYellow transition">Installation</a></li>
+                    <li><a href="#data-roles" class="hover:text-nexusYellow transition">Data Roles Mapping</a></li>
+                    <li><a href="#format-pane" class="hover:text-nexusYellow transition">Format Pane Settings</a></li>
+                </ul>
+
+                <h4 class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-4">DAX Recipes (Pro)</h4>
+                <ul class="space-y-3 mb-8 text-sm">
+                    <li><a href="#dax-json" class="hover:text-nexusYellow transition">Dynamic JSON Config</a></li>
+                    <li><a href="#dax-insights" class="hover:text-nexusYellow transition">Smart HTML Insights</a></li>
+                    <li><a href="#dax-formatting" class="hover:text-nexusYellow transition">Dynamic Formatting & Units</a></li>
+                    <li><a href="#dax-colors" class="hover:text-nexusYellow transition">Conditional Borders</a></li>
+                </ul>
+
+                <h4 class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-4">Enterprise</h4>
+                <ul class="space-y-3 text-sm">
+                    <li><a href="#licensing" class="text-nexusYellow font-semibold hover:text-yellow-400 transition">License & Activation</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <main class="flex-1 max-w-4xl bg-nexusGray/30 p-8 rounded-2xl border border-gray-800">
+            
+            <h1 class="text-4xl font-extrabold text-white mb-4">NexusInsightCards Documentation</h1>
+            <p class="text-lg text-gray-400 mb-12">Learn how to build high-density, actionable executive dashboards in minutes using our enterprise-grade Power BI custom visual and advanced DAX patterns.</p>
+
+            <section id="data-roles" class="mb-16">
+                <h2 class="text-2xl font-bold text-white mb-4 flex items-center"><span class="text-nexusYellow mr-2">#</span> Complete Data Roles Configuration</h2>
+                <div class="overflow-x-auto bg-nexusGray p-2 rounded-xl border border-gray-700">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="border-b border-gray-700 text-white">
+                                <th class="p-3 font-semibold">Data Role</th>
+                                <th class="p-3 font-semibold">Description</th>
+                                <th class="p-3 font-semibold text-xs text-gray-400 uppercase">Type</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-sm">
+                            <tr class="border-b border-gray-800">
+                                <td class="p-3 font-medium text-nexusYellow">KPI Category</td>
+                                <td class="p-3 text-gray-300">The dimension used to split and generate individual cards.</td>
+                                <td class="p-3"><span class="bg-gray-800 px-2 py-1 rounded text-xs text-gray-300">Grouping</span></td>
+                            </tr>
+                            <tr class="border-b border-gray-800">
+                                <td class="p-3 font-medium text-nexusYellow">Data Field</td>
+                                <td class="p-3 text-gray-300">The primary numeric value displayed in the center.</td>
+                                <td class="p-3"><span class="bg-gray-800 px-2 py-1 rounded text-xs text-gray-300">Measure</span></td>
+                            </tr>
+                            <tr class="border-b border-gray-800">
+                                <td class="p-3 font-medium text-nexusYellow">Target Value</td>
+                                <td class="p-3 text-gray-300">Comparison metric for variance percentage and dynamic indicators (▲/▼).</td>
+                                <td class="p-3"><span class="bg-gray-800 px-2 py-1 rounded text-xs text-gray-500">Optional</span></td>
+                            </tr>
+                            <tr class="border-b border-gray-800">
+                                <td class="p-3 font-medium text-nexusYellow">Trend Axis</td>
+                                <td class="p-3 text-gray-300">Time intelligence axis required to render Sparklines.</td>
+                                <td class="p-3"><span class="bg-gray-800 px-2 py-1 rounded text-xs text-gray-500">Grouping</span></td>
+                            </tr>
+                            <tr class="border-b border-gray-800">
+                                <td class="p-3 font-medium text-nexusYellow">Dynamic Format String</td>
+                                <td class="p-3 text-gray-300">A measure returning a DAX format string to dynamically format the primary value.</td>
+                                <td class="p-3"><span class="bg-gray-800 px-2 py-1 rounded text-xs text-nexusYellow">PRO Measure</span></td>
+                            </tr>
+                            <tr class="border-b border-gray-800">
+                                <td class="p-3 font-medium text-nexusYellow">Unit Label (Measure)</td>
+                                <td class="p-3 text-gray-300">A dynamic measure for the unit text displayed next to the value (e.g., 'M', 'bn').</td>
+                                <td class="p-3"><span class="bg-gray-800 px-2 py-1 rounded text-xs text-nexusYellow">PRO Measure</span></td>
+                            </tr>
+                            <tr class="border-b border-gray-800">
+                                <td class="p-3 font-medium text-nexusYellow">Conditional Border Color</td>
+                                <td class="p-3 text-gray-300">A measure to dynamically determine the left border color (must return a Hex code).</td>
+                                <td class="p-3"><span class="bg-gray-800 px-2 py-1 rounded text-xs text-nexusYellow">PRO Measure</span></td>
+                            </tr>
+                            <tr class="border-b border-gray-800">
+                                <td class="p-3 font-medium text-nexusYellow">Dynamic Config (JSON)</td>
+                                <td class="p-3 text-gray-300">Advanced JSON payload to override icons, colors, and sparkline types per card.</td>
+                                <td class="p-3"><span class="bg-gray-800 px-2 py-1 rounded text-xs text-nexusYellow">PRO Measure</span></td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-medium text-nexusYellow">Reference Tooltip</td>
+                                <td class="p-3 text-gray-300">HTML-supported text for dynamic contextual alerts at the bottom of the card.</td>
+                                <td class="p-3"><span class="bg-gray-800 px-2 py-1 rounded text-xs text-nexusYellow">PRO Measure</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section id="format-pane" class="mb-16">
+                <h2 class="text-2xl font-bold text-white mb-4 flex items-center"><span class="text-nexusYellow mr-2">#</span> Format Pane Settings</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-nexusGray p-6 rounded-xl border border-gray-700">
+                        <h3 class="text-lg font-bold text-white mb-2">Grid Layout</h3>
+                        <ul class="space-y-2 text-sm text-gray-400">
+                            <li><strong class="text-gray-300">Columns:</strong> Set the number of columns (1-10) for your CSS grid.</li>
+                            <li><strong class="text-gray-300">Card Dimensions:</strong> Manually adjust absolute Width and Height (px).</li>
+                            <li><strong class="text-gray-300">Gap & Padding:</strong> Control the spacing between and inside the KPI cards.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-nexusGray p-6 rounded-xl border border-gray-700">
+                        <h3 class="text-lg font-bold text-white mb-2">Cards Styling</h3>
+                        <ul class="space-y-2 text-sm text-gray-400">
+                            <li><strong class="text-gray-300">Aggregation:</strong> Choose Sum, Average, or Last Point rendering.</li>
+                            <li><strong class="text-gray-300">Icons:</strong> Select from 13 built-in SVG icons and apply 3D drop-shadows.</li>
+                            <li><strong class="text-gray-300">Sparklines:</strong> Toggle Line, Area, Bar, Progress, or Gauge charts.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-nexusGray p-6 rounded-xl border border-gray-700">
+                        <h3 class="text-lg font-bold text-white mb-2">Variance & Colors</h3>
+                        <ul class="space-y-2 text-sm text-gray-400">
+                            <li><strong class="text-gray-300">Status Colors:</strong> Define Custom Good, Bad, and Neutral Hex colors.</li>
+                            <li><strong class="text-gray-300">Indicators:</strong> Toggle the automated ▲/▼ variance percentage calculation display.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-nexusGray p-6 rounded-xl border border-gray-700">
+                        <h3 class="text-lg font-bold text-white mb-2">Advanced Layout</h3>
+                        <ul class="space-y-2 text-sm text-gray-400">
+                            <li><strong class="text-gray-300">Insight Text:</strong> Enable/Disable the Smart Alert narrative footers.</li>
+                            <li><strong class="text-gray-300">Dividers:</strong> Add customizable separating lines (solid, dashed, dotted) above insights.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <div class="mb-12 border-t border-gray-800"></div>
+
+            <h2 class="text-3xl font-extrabold text-white mb-6">Enterprise DAX Recipes</h2>
+            <p class="text-gray-400 mb-8">Copy and paste these enterprise-grade DAX patterns into your model to unlock the visual's maximum potential.</p>
+
+            <section id="dax-json" class="mb-12">
+                <h3 class="text-xl font-bold text-white mb-2 flex items-center"><span class="text-nexusYellow mr-2">1.</span> Dynamic JSON Configuration</h3>
+                <p class="text-sm text-gray-400 mb-4">Drop this measure into the <strong>Dynamic Configuration (JSON)</strong> role to independently control the icon, shadow, and chart type for each specific KPI.</p>
+                <div class="relative bg-nexusDark p-4 rounded-xl border border-gray-700 group code-container">
+                    <button onclick="copyCode('jsonConfig')" class="absolute top-3 right-3 bg-gray-800 hover:bg-nexusYellow hover:text-nexusDark text-gray-400 px-3 py-1 rounded text-xs font-bold transition z-10">Copy Code</button>
+                    <pre id="jsonConfig" class="text-sm font-mono text-green-400 pt-6 pb-2">
+Nexus Dynamic Config = 
+VAR SelectedKPI = SELECTEDVALUE ( 'Nexus_Master_Dataset'[KPI_Name] )
+RETURN
+    SWITCH (
+        SelectedKPI,
+        "Revenue", "{""icon"":""money"", ""color"":""#1D4ED8"", ""shadow"":""#1D4ED8"", ""trendChart"": { ""type"": ""area"", ""color"": ""#60A5FA"" } }",
+        "Daily Orders", "{""icon"":""shoppingCart"", ""color"":""#2563EB"", ""shadow"":""#2563EB"", ""trendChart"": { ""type"": ""bar"", ""color"": ""#93C5FD"" } }",
+        "Average Order Value", "{""icon"":""money"", ""color"":""#6D28D9"", ""shadow"":""#6D28D9"", ""trendChart"": { ""type"": ""line"", ""color"": ""#A78BFA"" } }",
+        "Discount Rate", "{""icon"":""target"", ""color"":""#D97706"", ""shadow"":""#D97706"", ""trendChart"": { ""type"": ""line"", ""color"": ""#FBBF24"" } }",
+        "Gross Margin Rate", "{""icon"":""chart"", ""color"":""#15803D"", ""shadow"":""#15803D"", ""trendChart"": { ""type"": ""progressBar"", ""color"": ""#4ADE80"" } }",
+        "CSAT Score", "{""icon"":""users"", ""color"":""#0F766E"", ""shadow"":""#0F766E"", ""trendChart"": { ""type"": ""gauge"", ""color"": ""#5EEAD4"" } }",
+        "Inventory Value", "{""icon"":""inventory"", ""color"":""#7C3AED"", ""shadow"":""#7C3AED"", ""trendChart"": { ""type"": ""area"", ""color"": ""#C4B5FD"" } }",
+        "Dead Stock", "{""icon"":""box"", ""color"":""#B91C1C"", ""shadow"":""#B91C1C"", ""trendChart"": { ""type"": ""bar"", ""color"": ""#F87171"" } }",
+        "Stockout Events", "{""icon"":""warning"", ""color"":""#DC2626"", ""shadow"":""#DC2626"", ""trendChart"": { ""type"": ""bar"", ""color"": ""#FCA5A5"" } }",
+        "Inventory Turnover", "{""icon"":""chart"", ""color"":""#6D28D9"", ""shadow"":""#6D28D9"", ""trendChart"": { ""type"": ""line"", ""color"": ""#C4B5FD"" } }",
+        "Fill Rate", "{""icon"":""box"", ""color"":""#15803D"", ""shadow"":""#15803D"", ""trendChart"": { ""type"": ""line"", ""color"": ""#86EFAC"" } }",
+        "Active Employees", "{""icon"":""users"", ""color"":""#0891B2"", ""shadow"":""#0891B2"", ""trendChart"": { ""type"": ""area"", ""color"": ""#67E8F9"" } }",
+        "Absenteeism Rate", "{""icon"":""warning"", ""color"":""#D97706"", ""shadow"":""#D97706"", ""trendChart"": { ""type"": ""line"", ""color"": ""#FCD34D"" } }",
+        "Employee Turnover Rate", "{""icon"":""users"", ""color"":""#BE123C"", ""shadow"":""#BE123C"", ""trendChart"": { ""type"": ""line"", ""color"": ""#FDA4AF"" } }",
+        "Training Completion Rate", "{""icon"":""target"", ""color"":""#0F766E"", ""shadow"":""#0F766E"", ""trendChart"": { ""type"": ""line"", ""color"": ""#99F6E4"" } }",
+        "Overtime Hours", "{""icon"":""warning"", ""color"":""#EA580C"", ""shadow"":""#EA580C"", ""trendChart"": { ""type"": ""bar"", ""color"": ""#FDBA74"" } }",
+        "Open Positions", "{""icon"":""users"", ""color"":""#2563EB"", ""shadow"":""#2563EB"", ""trendChart"": { ""type"": ""bar"", ""color"": ""#93C5FD"" } }",
+        "On-Time Delivery", "{""icon"":""truck"", ""color"":""#15803D"", ""shadow"":""#15803D"", ""trendChart"": { ""type"": ""line"", ""color"": ""#86EFAC"" } }",
+        "Fleet Efficiency", "{""icon"":""truck"", ""color"":""#1D4ED8"", ""shadow"":""#1D4ED8"", ""trendChart"": { ""type"": ""line"", ""color"": ""#93C5FD"" } }",
+        "Daily Returns", "{""icon"":""box"", ""color"":""#DC2626"", ""shadow"":""#DC2626"", ""trendChart"": { ""type"": ""bar"", ""color"": ""#FCA5A5"" } }",
+        "Delivery Cost per Order", "{""icon"":""money"", ""color"":""#C2410C"", ""shadow"":""#C2410C"", ""trendChart"": { ""type"": ""line"", ""color"": ""#FDBA74"" } }",
+        "Avg Delivery Delay Minutes", "{""icon"":""warning"", ""color"":""#B91C1C"", ""shadow"":""#B91C1C"", ""trendChart"": { ""type"": ""line"", ""color"": ""#FCA5A5"" } }",
+        // Default Fallback
+        "{""icon"":""chart"", ""color"":""#475569"", ""shadow"":""#475569"", ""trendChart"": { ""type"": ""line"", ""color"": ""#CBD5E1"" } }"
+    )</pre>
+                </div>
+            </section>
+
+            <section id="dax-insights" class="mb-12">
+                <h3 class="text-xl font-bold text-white mb-2 flex items-center"><span class="text-nexusYellow mr-2">2.</span> Smart HTML Insights (Reference Tooltip)</h3>
+                <p class="text-sm text-gray-400 mb-4">Our visual natively renders HTML. Use this measure to generate dynamic, color-coded narrative footers based on performance variance.</p>
+                <div class="relative bg-nexusDark p-4 rounded-xl border border-gray-700 group code-container">
+                    <button onclick="copyCode('htmlInsights')" class="absolute top-3 right-3 bg-gray-800 hover:bg-nexusYellow hover:text-nexusDark text-gray-400 px-3 py-1 rounded text-xs font-bold transition z-10">Copy Code</button>
+                    <pre id="htmlInsights" class="text-sm font-mono text-green-400 pt-6 pb-2">
+Nexus Insight Text Quick = 
+// Note: Ensure your [Variance %] measure returns a decimal (e.g., 0.06 for 6%)
+VAR VarPct = [Variance %] 
+
+VAR SelectedKPI = SELECTEDVALUE('Nexus_Master_Dataset'[KPI_Name], "Multiple")
+VAR CurrentIndustry = SELECTEDVALUE('Nexus_Master_Dataset'[Industry], "General")
+
+// 1. Define KPIs where a lower value indicates better performance (Lower is Better)
+VAR IsLowerBetter = 
+    SelectedKPI IN {"Dead Stock", "Stockout Events", "Absenteeism Rate", "Daily Returns"}
+
+// 2. Calculate actual performance status
+VAR IsGoodPerformance = 
+    (NOT IsLowerBetter && VarPct > 0.05) || (IsLowerBetter && VarPct < -0.05)
+
+VAR IsBadPerformance = 
+    (NOT IsLowerBetter && VarPct < -0.05) || (IsLowerBetter && VarPct > 0.05)
+
+VAR FormattedVar = FORMAT(ABS(VarPct), "0.0%")
+
+// 3. Generate dynamic and specialized texts for "Good Performance"
+VAR GoodText = 
+    SWITCH(CurrentIndustry,
+        "Sales", "<span style='color:#27ae60; font-weight:bold;'>🚀 Strong Growth:</span> Outstanding performance! " & SelectedKPI & " is surpassing targets by " & FormattedVar & ".",
+        "Inventory", "<span style='color:#27ae60; font-weight:bold;'>✅ Optimized:</span> Excellent warehouse control. " & SelectedKPI & " is better than expected by " & FormattedVar & ".",
+        "HR", "<span style='color:#27ae60; font-weight:bold;'>🌟 Healthy Workspace:</span> Great workforce metrics. " & SelectedKPI & " improved by " & FormattedVar & " against the baseline.",
+        "Distribution", "<span style='color:#27ae60; font-weight:bold;'>🚚 Highly Efficient:</span> Logistics are performing smoothly. " & SelectedKPI & " beat targets by " & FormattedVar & ".",
+        "<span style='color:#27ae60; font-weight:bold;'>On Track:</span> " & SelectedKPI & " is performing exceptionally well."
+    )
+    
+// 4. Generate dynamic warning texts for "Poor Performance"
+VAR BadText = 
+    SWITCH(CurrentIndustry,
+        "Sales", "<span style='color:#e74c3c; font-weight:bold;'>⚠️ Action Required:</span> " & SelectedKPI & " fell short by " & FormattedVar & ". Review recent sales trends.",
+        "Inventory", "<span style='color:#e74c3c; font-weight:bold;'>📦 Risk Alert:</span> Supply chain warning! " & SelectedKPI & " deviated negatively by " & FormattedVar & ".",
+        "HR", "<span style='color:#e74c3c; font-weight:bold;'>👥 Attention Needed:</span> " & SelectedKPI & " is off-target by " & FormattedVar & ". Consider immediate HR review.",
+        "Distribution", "<span style='color:#e74c3c; font-weight:bold;'>🛑 Bottleneck Detected:</span> " & SelectedKPI & " missed the SLA by " & FormattedVar & ". Check fleet operations.",
+        "<span style='color:#e74c3c; font-weight:bold;'>Underperforming:</span> " & SelectedKPI & " requires immediate attention."
+    )
+    
+// 5. Text for stable state (between 5% positive and negative)
+VAR NeutralText = 
+    "<span style='color:#f39c12; font-weight:700;'>⚖️ Stable Status:</span> " & SelectedKPI & " in " & CurrentIndustry & " is hovering near the target (Variance: " & FORMAT(VarPct, "0.0%") & ")."
+
+// 6. Final Output Evaluation
+RETURN
+    IF(
+        SelectedKPI = "Multiple", 
+        "<span style='color:#7f8c8d; font-style:italic;'>Select a specific metric or day to view deep AI insights.</span>",
+        SWITCH(TRUE(),
+            IsGoodPerformance, GoodText,
+            IsBadPerformance, BadText,
+            NeutralText
+        )
+    )</pre>
+                </div>
+            </section>
+
+            <section id="dax-formatting" class="mb-12">
+                <h3 class="text-xl font-bold text-white mb-2 flex items-center"><span class="text-nexusYellow mr-2">3.</span> Dynamic Formatting & Units</h3>
+                <p class="text-sm text-gray-400 mb-4">Pass these two measures into the <strong>Dynamic Format String</strong> and <strong>Unit Label</strong> roles to allow cards in the same grid to display mixing Data Types (e.g., USD vs %).</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="relative bg-nexusDark p-4 rounded-xl border border-gray-700 group code-container">
+                        <button onclick="copyCode('formatString')" class="absolute top-2 right-2 bg-gray-800 hover:bg-nexusYellow hover:text-nexusDark text-gray-400 px-2 py-1 rounded text-[10px] font-bold transition z-10">Copy Format</button>
+                        <pre id="formatString" class="text-xs font-mono text-green-400 pt-6 pb-2">
+Nexus Format String = 
+VAR _KPI = [Nexus Selected KPI]
+RETURN
+    SWITCH (
+        TRUE (),
+        _KPI IN { 
+            "Revenue", "Inventory Value", 
+            "Delivery Cost per Order", "Average Order Value" 
+        }, "#,0",
+        _KPI IN { 
+            "Daily Orders", "Dead Stock", "Stockout Events", 
+            "Active Employees", "Overtime Hours", "Open Positions", 
+            "Daily Returns", "Avg Delivery Delay Minutes" 
+        }, "#,0",
+        _KPI IN { 
+            "Discount Rate", "Gross Margin Rate", "Absenteeism Rate", 
+            "Employee Turnover Rate", "Training Completion Rate", 
+            "On-Time Delivery", "Fleet Efficiency", "Fill Rate" 
+        }, "0.0%",
+        _KPI IN { "CSAT Score", "Inventory Turnover" }, "0.0",
+        "#,0"
+    )</pre>
+                    </div>
+                    <div class="relative bg-nexusDark p-4 rounded-xl border border-gray-700 group code-container">
+                        <button onclick="copyCode('unitLabels')" class="absolute top-2 right-2 bg-gray-800 hover:bg-nexusYellow hover:text-nexusDark text-gray-400 px-2 py-1 rounded text-[10px] font-bold transition z-10">Copy Unit</button>
+                        <pre id="unitLabels" class="text-xs font-mono text-green-400 pt-6 pb-2">
+Nexus Unit Measure = 
+VAR _KPI = [Nexus Selected KPI]
+RETURN
+    SWITCH (
+        TRUE (),
+        _KPI IN { "Revenue", "Inventory Value", "Delivery Cost per Order" }, "USD",
+        _KPI = "Average Order Value", "USD / Order",
+        _KPI = "Daily Orders", "Orders",
+        _KPI IN { 
+            "Discount Rate", "Gross Margin Rate", "Absenteeism Rate", 
+            "Employee Turnover Rate", "Training Completion Rate", 
+            "On-Time Delivery", "Fleet Efficiency", "Fill Rate" 
+        }, "%",
+        _KPI = "CSAT Score", "Score",
+        _KPI = "Inventory Turnover", "Turns",
+        _KPI = "Stockout Events", "Events",
+        _KPI = "Dead Stock", "Units",
+        _KPI = "Active Employees", "Employees",
+        _KPI = "Overtime Hours", "Hours",
+        _KPI = "Open Positions", "Positions",
+        _KPI = "Daily Returns", "Returns",
+        _KPI = "Avg Delivery Delay Minutes", "Minutes",
+        BLANK ()
+    )</pre>
+                    </div>
+                </div>
+            </section>
+
+            <section id="dax-colors" class="mb-16">
+                <h3 class="text-xl font-bold text-white mb-2 flex items-center"><span class="text-nexusYellow mr-2">4.</span> Conditional Border Colors</h3>
+                <p class="text-sm text-gray-400 mb-4">Map this to the <strong>Conditional Border Color</strong> role to group your metrics visually by domain (e.g., Sales=Blue, HR=Cyan, Inventory=Red).</p>
+                <div class="relative bg-nexusDark p-4 rounded-xl border border-gray-700 group code-container">
+                    <button onclick="copyCode('borderColors')" class="absolute top-3 right-3 bg-gray-800 hover:bg-nexusYellow hover:text-nexusDark text-gray-400 px-3 py-1 rounded text-xs font-bold transition z-10">Copy Code</button>
+                    <pre id="borderColors" class="text-sm font-mono text-green-400 pt-6 pb-2">
+Nexus Border Color = 
+VAR _KPI = [Nexus Selected KPI]
+RETURN
+    SWITCH (
+        _KPI,
+        -- Sales: volume / growth / quality / pressure / health / customer
+        "Revenue", "#2563EB",
+        "Daily Orders", "#3B82F6",
+        "Average Order Value", "#7C3AED",
+        "Discount Rate", "#F59E0B",
+        "Gross Margin Rate", "#16A34A",
+        "CSAT Score", "#14B8A6",
+
+        -- Inventory
+        "Inventory Value", "#7C3AED",
+        "Dead Stock", "#DC2626",
+        "Stockout Events", "#EF4444",
+        "Inventory Turnover", "#8B5CF6",
+        "Fill Rate", "#16A34A",
+
+        -- HR
+        "Active Employees", "#06B6D4",
+        "Absenteeism Rate", "#F59E0B",
+        "Employee Turnover Rate", "#E11D48",
+        "Training Completion Rate", "#14B8A6",
+        "Overtime Hours", "#FB923C",
+        "Open Positions", "#3B82F6",
+
+        -- Distribution
+        "On-Time Delivery", "#16A34A",
+        "Fleet Efficiency", "#2563EB",
+        "Daily Returns", "#EF4444",
+        "Delivery Cost per Order", "#F97316",
+        "Avg Delivery Delay Minutes", "#DC2626",
+
+        -- Default Fallback
+        "#64748B"
+    )</pre>
+                </div>
+            </section>
+
+            <section id="licensing" class="mb-16">
+                <h2 class="text-2xl font-bold text-white mb-4 flex items-center"><span class="text-nexusYellow mr-2">#</span> License & Activation</h2>
+                <div class="bg-gradient-to-br from-nexusGray to-[#2d2d3b]/50 p-6 rounded-xl border-l-4 border-nexusYellow">
+                    <p class="mb-4 text-sm leading-relaxed">The visual runs in a free <strong>Community Tier</strong> by default, limited to 3 KPI categories. To unlock unlimited cards and premium support, apply the following 30-Day Evaluation Key.</p>
+                    <p class="text-xs text-gray-400 mb-2 uppercase tracking-wide">Enter in: Format Pane > License & Activation</p>
+                    
+                    <div class="relative bg-nexusDark p-3 rounded-lg border border-gray-700">
+                        <button onclick="copyCode('licenseKey')" class="absolute top-2 right-2 bg-gray-800 hover:bg-nexusYellow hover:text-nexusDark text-gray-400 px-3 py-1 rounded text-xs font-bold transition">Copy Key</button>
+                        <code id="licenseKey" class="text-sm font-mono text-white block pr-20 break-all">NEXUS-eyJjbGllbnQiOiJHaXRIdWJEZW1vIiwiZXhwIjoiMjAyNi0wOC0zMCJ9-114F23C</code>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script>
+        function copyCode(elementId) {
+            const textToCopy = document.getElementById(elementId).innerText;
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                const btn = event.target;
+                const originalText = btn.innerText;
+                btn.innerText = "Copied!";
+                btn.classList.add("bg-nexusYellow", "text-nexusDark");
+                btn.classList.remove("text-gray-400");
+                setTimeout(() => {
+                    btn.innerText = originalText;
+                    btn.classList.remove("bg-nexusYellow", "text-nexusDark");
+                    btn.classList.add("text-gray-400");
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>
