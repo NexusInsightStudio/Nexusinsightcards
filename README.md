@@ -17,7 +17,7 @@
 *Executive view of growth, profitability, discount pressure, and customer sentiment.*
 
 <p align="center">
-  <img src="image_853a03.jpg" alt="Nexus BI Dashboard Preview" width="100%" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+  <img src="demo.gif" alt="Nexus BI Dashboard Dynamic Preview" width="100%" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
 </p>
 
 ## ✨ Key Technical Features
